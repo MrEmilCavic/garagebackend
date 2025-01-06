@@ -1,0 +1,6 @@
+@garagebackend_HostAddress = http://localhost:5208
+
+GET {{garagebackend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
