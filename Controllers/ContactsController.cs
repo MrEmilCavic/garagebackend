@@ -22,9 +22,9 @@ namespace garagebackend.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<Contacts>> GetContact(int contactID)
+        public async Task<ActionResult<Contacts>> GetContact(int id)
         {
-            var contact = await _context.Contacts.FindAsync(contactID);
+            var contact = await _context.Contacts.FindAsync(id);
             if (contact == null) return NotFound();
             return contact;
         }
@@ -53,6 +53,25 @@ namespace garagebackend.Controllers
                 throw;
             }
             return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteContact(int id)
+        {
+            var contact = await _context.Contacts.FindAsync(id);
+            if (contact == null) return NotFound();
+
+            try
+            {
+                _context.Contacts.Remove(contact);
+                await _context.SaveChangesAsync();
+
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, "Issue deleting contact...it doesnt exist!");
+            }
         }
 
         private bool ContactExists(int id)
