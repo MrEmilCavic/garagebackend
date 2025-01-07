@@ -148,7 +148,6 @@ C:\Users\emilc\source\repos\garagebackend\garagebackend\obj\Debug\net9.0\staticw
 C:\Users\emilc\source\repos\garagebackend\garagebackend\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.garagebackend.props
 C:\Users\emilc\source\repos\garagebackend\garagebackend\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.garagebackend.props
 C:\Users\emilc\source\repos\garagebackend\garagebackend\obj\Debug\net9.0\staticwebassets.pack.json
-C:\Users\emilc\source\repos\garagebackend\garagebackend\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Users\emilc\source\repos\garagebackend\garagebackend\obj\Debug\net9.0\garageba.83F3AE8C.Up2Date
 C:\Users\emilc\source\repos\garagebackend\garagebackend\obj\Debug\net9.0\garagebackend.dll
 C:\Users\emilc\source\repos\garagebackend\garagebackend\obj\Debug\net9.0\refint\garagebackend.dll
@@ -158,3 +157,4 @@ C:\Users\emilc\source\repos\garagebackend\garagebackend\obj\Debug\net9.0\ref\gar
 C:\Users\emilc\source\repos\garagebackend\garagebackend\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\emilc\source\repos\garagebackend\garagebackend\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\emilc\source\repos\garagebackend\garagebackend\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\emilc\source\repos\garagebackend\garagebackend\obj\Debug\net9.0\garagebackend.sourcelink.json
