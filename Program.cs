@@ -15,7 +15,6 @@ var builder = WebApplication.CreateBuilder(args);
 DotEnv.Load();
 builder.Configuration.AddEnvironmentVariables();
 
-//var dbConnectionString = $"Data Source = {builder.Configuration["SOURCE"]}; Initial Catalog ={builder.Configuration["CATALOG"]}; User ID = {builder.Configuration["USERID"]}; Password ={builder.Configuration["SECRET"]}; Connect Timeout = 60; Encrypt = True; Trust Server Certificate=False; Application Intent = ReadWrite; Multi Subnet Failover=False";
 string connectionString = Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING")!;
 using var dbConnectionString = new SqlConnection(connectionString);
 dbConnectionString.Open();
