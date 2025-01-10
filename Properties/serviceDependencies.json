@@ -1,6 +1,10 @@
 {
   "dependencies": {
-    "apis1": {
+    "identityapp1": {
+      "ignored": "true",
+      "type": "identityapp"
+    },
+    "apis2": {
       "type": "apis"
     }
   }

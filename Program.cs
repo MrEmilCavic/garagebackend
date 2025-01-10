@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
-
+using Microsoft.Data.SqlClient;
 using dotenv.net;
 using Microsoft.AspNetCore.Hosting.Server;
 using garagebackend.Models;
@@ -9,14 +9,16 @@ using System.Text;
 using static System.Net.Mime.MediaTypeNames;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 using System;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 DotEnv.Load();
 builder.Configuration.AddEnvironmentVariables();
 
 //var dbConnectionString = $"Data Source = {builder.Configuration["SOURCE"]}; Initial Catalog ={builder.Configuration["CATALOG"]}; User ID = {builder.Configuration["USERID"]}; Password ={builder.Configuration["SECRET"]}; Connect Timeout = 60; Encrypt = True; Trust Server Certificate=False; Application Intent = ReadWrite; Multi Subnet Failover=False";
-
-var dbConnectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+string connectionString = Environment.GetEnvironmentVariable("AZURE_SQL_CONNECTIONSTRING")!;
+using var dbConnectionString = new SqlConnection(connectionString);
+dbConnectionString.Open();
 
 // Add services to the container.
 builder.Services.AddDbContext<GarageDbContext>(options => options.UseSqlServer(dbConnectionString));
@@ -29,6 +31,15 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.ConfigureSwaggerGen(setup =>
+{
+    setup.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
+    {
+        Title = "Garage Project",
+        Version = "v1"
+    });
+});
+
 
 builder.Services.AddCors(options =>
 {
@@ -67,6 +78,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseSwagger();
+app.UseSwaggerUI();
 app.UseCors("AllowReactApp");
 
 app.UseRouting();

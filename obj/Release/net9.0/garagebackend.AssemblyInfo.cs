@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("garagebackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1a347404bae3cf0ced81f6ffa143edf3631a03ae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0d40340e01ebfa2c9259f56c23cde2a58e163eed")]
 [assembly: System.Reflection.AssemblyProductAttribute("garagebackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("garagebackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
